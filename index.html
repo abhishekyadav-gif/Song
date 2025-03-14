@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized QR Code</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fce4ec;
+    }
+
+    .container {
+      margin-top: 50px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+    }
+
+    input,
+    select {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #c2185b;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="loveSong" autoplay loop>
+    <source src="C:\Users\Abhishek Yadav\Downloads\Kesariya Brahmastra 128 Kbps.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <div class="container">
+    <h2>💖 Would you want to date Abhi? 💖</h2>
+    <button onclick="showOptions()">Yes</button>
+
+    <div id="placeSelection" class="hidden">
+      <h3>Choose a place:</h3>
+      <select id="place">
+        <option value="Cafe">Cafe</option>
+        <option value="Park">Park</option>
+        <option value="Restaurant">Restaurant</option>
+      </select>
+      <button onclick="showDateSelection()">Next</button>
+    </div>
+
+    <div id="dateSelection" class="hidden">
+      <h3>Choose a date:</h3>
+      <input type="date" id="date">
+      <button onclick="showTimeSelection()">Next</button>
+    </div>
+
+    <div id="timeSelection" class="hidden">
+      <h3>Choose a time:</h3>
+      <input type="time" id="time">
+      <button onclick="showThankYou()">Next</button>
+    </div>
+
+    <div id="thankYouMessage" class="hidden">
+      <h2>Thank you! Your date is set! ❤️</h2>
+    </div>
+  </div>
+
+  <script>
+    function showOptions() {
+      document.getElementById("placeSelection").classList.remove("hidden");
+      document.getElementById("loveSong").play();
+    }
+    function showDateSelection() {
+      document.getElementById("dateSelection").classList.remove("hidden");
+    }
+    function showTimeSelection() {
+      document.getElementById("timeSelection").classList.remove("hidden");
+    }
+    function showThankYou() {
+      document.getElementById("thankYouMessage").classList.remove("hidden");
+    }
+  </script>
+</body>
+
+</html>
